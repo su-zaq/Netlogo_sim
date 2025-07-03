@@ -16,16 +16,17 @@ turtles-own
 ]
 
 to setup
-  clear-output
-  setup-experiment
+  clear-output  ; outputの初期化
+  setup-experiment  ; 実験のセットアップ
 end
 
 to setup-experiment
-  clear-patches
-  clear-turtles
-  clear-all-plots
-  clear-ticks
-  create-turtles carrying-capacity
+  clear-patches ; パッチ初期化
+  clear-turtles ; タートル初期化
+  clear-all-plots ; プロットの初期化
+  clear-ticks ; ティックの初期化
+  create-turtles carrying-capacity  ; タートルの作成
+  ; ---------------以降は変更が必要な部分---------------
   [
     setxy random-xcor random-ycor         ; randomize turtle locations
     ifelse who < (carrying-capacity / 2)  ; start out with equal numbers of reds and blues
